@@ -40,6 +40,19 @@ public final class PikaPunishments {
 		}
 	}
 
+	/** Réponse HTTP autre que 200 (ex. 429 = trop de requêtes). */
+	public static final class HttpStatusException extends IOException {
+		private static final long serialVersionUID = 1L;
+		public final int code;
+		public final long retryAfterMs; // 0 si le serveur n'a rien précisé
+
+		public HttpStatusException(int code, long retryAfterMs) {
+			super("HTTP " + code);
+			this.code = code;
+			this.retryAfterMs = retryAfterMs;
+		}
+	}
+
 	private static final String BASE_URL = "https://pika-network.net/bans/search/";
 	private static final int MAX_BYTES = 2 * 1024 * 1024;
 
@@ -63,7 +76,17 @@ public final class PikaPunishments {
 
 		int code = conn.getResponseCode();
 		if (code != 200) {
-			throw new IOException("HTTP " + code);
+			long retryMs = 0;
+			String header = conn.getHeaderField("Retry-After");
+			if (header != null) {
+				try {
+					retryMs = Long.parseLong(header.trim()) * 1000L;
+				} catch (NumberFormatException ignored) {
+					// date HTTP ou valeur illisible : on garde 0
+				}
+			}
+			conn.disconnect();
+			throw new HttpStatusException(code, retryMs);
 		}
 
 		try (InputStream in = conn.getInputStream()) {
