@@ -2,18 +2,13 @@
 	"schemaVersion": 1,
 	"id": "example_mod",
 	"version": "${version}",
-	"name": "Example mod",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"name": "PikaCheck",
+	"description": "Affiche l'historique de sanctions PikaNetwork d'un joueur avec /pcheck <pseudo>.",
 	"authors": [
-		"Me!"
+		"Loukas"
 	],
-	"contact": {
-		"homepage": "https://example.com/",
-		"sources": "https://github.com/OrnitheMC/ornithe-template-mod"
-	},
 	"license": "CC0-1.0",
-	"icon": "assets/example_mod/icon.png",
-	"environment": "*",
+	"environment": "client",
 	"entrypoints": {
 		"init": [
 			"com.example.example_mod.ExampleMod"
@@ -24,7 +19,7 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.17.3",
-		"minecraft": "1.7.2",
+		"minecraft": "1.8.9",
 		"osl-entrypoints": ">=0.4.0"
 	}
 }
