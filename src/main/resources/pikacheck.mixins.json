@@ -1,7 +1,7 @@
 {
 	"required": true,
 	"minVersion": "0.8",
-	"package": "com.example.example_mod.mixin",
+	"package": "fr.loumox85.pikacheck.mixin",
 	"compatibilityLevel": "JAVA_8",
 	"mixins": [
 	],

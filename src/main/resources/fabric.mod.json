@@ -1,25 +1,27 @@
 {
 	"schemaVersion": 1,
-	"id": "example_mod",
+	"id": "pikacheck",
 	"version": "${version}",
 	"name": "PikaCheck",
-	"description": "Affiche l'historique de sanctions PikaNetwork d'un joueur avec /pcheck <pseudo>.",
+	"description": "Affiche l'historique de sanctions PikaNetwork des joueurs : icône ! dans le tab, alertes dans le chat et commande /pcheck.",
 	"authors": [
-		"Loukas"
+		"loumox85"
 	],
 	"license": "CC0-1.0",
+	"icon": "assets/pikacheck/icon.png",
 	"environment": "client",
 	"entrypoints": {
 		"init": [
-			"com.example.example_mod.ExampleMod"
+			"fr.loumox85.pikacheck.PikaCheckMod"
 		]
 	},
 	"mixins": [
-		"example_mod.mixins.json"
+		"pikacheck.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.17.3",
 		"minecraft": "1.8.9",
-		"osl-entrypoints": ">=0.4.0"
+		"osl-entrypoints": "*",
+		"osl-config": "*"
 	}
 }

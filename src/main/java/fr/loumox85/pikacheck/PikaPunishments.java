@@ -1,4 +1,4 @@
-package com.example.example_mod;
+package fr.loumox85.pikacheck;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

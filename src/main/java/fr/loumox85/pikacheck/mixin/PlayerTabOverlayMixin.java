@@ -1,11 +1,11 @@
-package com.example.example_mod.mixin;
+package fr.loumox85.pikacheck.mixin;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import com.example.example_mod.BanChecker;
+import fr.loumox85.pikacheck.BanChecker;
 
 import net.minecraft.client.gui.overlay.PlayerTabOverlay;
 import net.minecraft.client.network.PlayerInfo;
