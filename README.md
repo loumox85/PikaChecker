@@ -1,26 +1,27 @@
 # PikaChecker
 
-Mod client **Minecraft 1.8.9** pour **Fabric** (`fr.loumox85.pikacheck`) conçu pour vérifier des informations de bannissement / punitions et interagir avec l'affichage joueur en jeu.
+Mod client **Minecraft 1.8.9** pour **Fabric 1.8.9** conçu pour vérifier des informations de bannissement / punitions et interagir avec l'affichage joueur en jeu.
 
 ## Fonctionnalités
 
-- **Vérification & punitions :** logique principale portée par `BanChecker` et `PikaPunishments`.
-- **Intégration client (Mixins) :**
-  - `LocalClientPlayerEntityMixin` : hook côté joueur local (ex. commandes, déclencheurs ou messages).
-  - `PlayerTabOverlayMixin` : personnalisation ou enrichissement de l'overlay `Tab`[cite: 1].
-- **Configuration :** gestion des paramètres via `PikaCheckConfig`[cite: 1].
+- **Vérification des avertissements et punitions**
+- **Intégrations client :**
+  - Commandes `/pcheck` afin de modifier les paramètres du mod ou de check manuellement un joueur
+  - Overlay dans le tab à l'aide d'un `!` (Orange: Le joueur a été ban pour insultes ou similaire; Rouge: Le joueur a été banni pour avoir utilisé des modifications clients ou cheats.
+
+- **Configuration :** gestion des paramètres via la commande /pcheck ou OneConfig (Utilisé dans OneClient, un launcher Minecraft développé par Polyfrost).
 
 ## Prérequis
 
-- **Minecraft :** `1.8.9`[cite: 1]
-- **Modloader :** Fabric (voir `build.gradle` et `fabric.mod.json` pour les versions exactes de Fabric Loader / mappings)[cite: 1]
-- **Java :** version configurée dans `build.gradle`[cite: 1]
+- **Minecraft :** `1.8.9`
+- **Modloader :** Fabric (Ornithe 1.8.9 et testé sur le Fabric Mod Loader 0.20.1)
+- **Java :** Java 25 afin que Ornithe fonctionne sur Fabric 1.8.9
 
 ## Installation
 
-1. Installe **Fabric** pour **Minecraft 1.8.9**[cite: 1].
-2. Place le `.jar` compilé de **PikaChecker** dans ton dossier `.minecraft/mods/`.
-3. Lance le jeu et ajuste la configuration si nécessaire (`PikaCheckConfig`)[cite: 1].
+1. Installe **Fabric/Ornithe** pour **Minecraft 1.8.9**.
+2. Place le mod `.jar` compilé de **PikaChecker** dans ton dossier `.minecraft/mods/` ou fais un déplacer/déposer sur le Launcher OneClient.
+3. Lance le jeu et ajuste la configuration si nécessaire.
 
 ## Compilation depuis les sources
 
